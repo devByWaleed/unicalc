@@ -152,10 +152,11 @@ const UniversityGrid: React.FC<UniversityGridProps> = ({ universities }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {universities.map((uni) => (
+
         <div
           key={uni.id}
           className="group relative bg-gradient-to-br from-slate-900/80 to-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1"
-        >
+          >
           <div className="h-48 bg-gray-800 overflow-hidden relative">
             <img 
               src={uni.image} 
@@ -175,21 +176,21 @@ const UniversityGrid: React.FC<UniversityGridProps> = ({ universities }) => {
           </div>
           
           <div className="p-6">
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex items-start justify-between">
               <div className="text-3xl">{uni.logo}</div>
             </div>
             
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+            <h3 className="text-lg font-bold text-white  group-hover:text-cyan-400 transition-colors line-clamp-2">
               {uni.shortName}
             </h3>
             
-            <p className="text-gray-400 text-sm mb-6 line-clamp-2 leading-relaxed">
+            <p className="text-gray-400 text-sm mb-10 line-clamp-2 leading-relaxed">
               {uni.name}
             </p>
             
             <button 
               onClick={() => handleCalculateClick(uni.id)}
-              className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white py-3 px-4 rounded-xl transition-all duration-200 font-semibold hover:shadow-lg hover:shadow-cyan-500/20 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+              className="w-5/6 mx-auto bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white py-3 px-4 rounded-xl fixed bottom-3 left-2 right-2 transition-all duration-200 font-semibold hover:shadow-lg hover:shadow-cyan-500/20 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
             >
               Calculate Aggregate
             </button>
